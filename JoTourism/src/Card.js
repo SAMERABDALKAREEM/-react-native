@@ -7,8 +7,7 @@ export default class Card extends React.PureComponent{
 render(){
     return(  
      <TouchableOpacity style={{flex:1}} onPress={()=>{
-        this.props.navigation.setParams({ latitude:this.props.Item.latitude , longitude:this.props.Item.longitude });
-        this.props.navigation.navigate("TabNav");
+        this.props.navigation.navigate("TabNav",{ latitude:this.props.Item.latitude , longitude:this.props.Item.longitude });
     }}>
       <View style={{borderBottomColor:"grey",borderBottomWidth:1,padding:5,flex:1,flexDirection:'row'}}>
         <Image source={{uri: this.props.Item.imageUrl}} style={{height:80,width:80}} />

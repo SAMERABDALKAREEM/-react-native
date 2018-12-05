@@ -39,7 +39,9 @@ const scenes = [
 {
   key:"4",
   area:"Aqaba",
-  imageUrl:"https://bit.ly/2FDE4ZE"
+  imageUrl:"https://bit.ly/2FDE4ZE",
+  latitude:31.9454,
+  longitude:35.9284,
 } , 
 {
   key:"5",

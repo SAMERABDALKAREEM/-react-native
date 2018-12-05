@@ -8,10 +8,9 @@ export default class LocationTab extends Component {
 
    constructor(props){ 
     super(props)
-
     this.state = { 
-      latitudeValue :this.props.navigation.getParam('latitude'),
-      longitudeVlue :this.props.navigation.getParam('longitude'),
+      latitudeValue :this.props.navigation.state.params.latitude,
+      longitudeVlue :this.props.navigation.state.params.longitude,
     }
    }
 
@@ -21,7 +20,9 @@ export default class LocationTab extends Component {
       <MapView style={{ flex: 1 }}
       initialRegion={{
       latitude:this.state.latitudeValue,
-      longitude:this.state.longitudeVlue
+      longitude:this.state.longitudeVlue,
+      latitudeDelta:30,
+      longitudeDelta:30
       }} />
     );
   }

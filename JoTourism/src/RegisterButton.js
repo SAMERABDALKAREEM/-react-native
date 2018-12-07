@@ -1,8 +1,10 @@
 import React from 'react'
 import {Text,Dimensions,TouchableOpacity} from 'react-native'
+import { AsyncStorage } from "react-native"
+
 
 const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height
+const height = Dimensions.get('window').height;
 
 export default class RegisterButton extends React.PureComponent { 
   
@@ -18,10 +20,19 @@ render() {
 }
 
  registerUser=()=>{
+       this.storeData();
        this.props.navigation.navigate("CardsListPage");
 }
 
+   storeData = async () => {
+    try {
+      await AsyncStorage.setItem('loginFlag', 'true');
+      } catch (error) {
+        console.log(error);
+     }
+  }
 
+  
 }
 
  

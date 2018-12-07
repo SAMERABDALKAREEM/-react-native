@@ -2,8 +2,26 @@ import { createStackNavigator,createAppContainer,createMaterialTopTabNavigator} 
 import RegistrationForm from './RegistrationForm';
 import CardsList from './CardsList';
 import TabNavigator from './TabNavigator';
+import Delegate from './Delegate';
   
 const navigator = createStackNavigator({
+
+  Delegate:{
+    screen:Delegate,
+    navigationOptions: {
+        title: 'Jo Tourism',                                                                                        
+        headerStyle: {                                                                                        
+          backgroundColor: '#298e82',                                                                           
+        },                                                                                                    
+        headerTintColor: '#fff',                                                                              
+        headerTitleStyle: {                                                                                   
+          fontWeight: 'bold',                                                                                   
+          fontFamily: 'Roboto'                                                                                  
+        }
+      }
+    
+    } ,
+
     Register:{
         screen:RegistrationForm,
         navigationOptions: {
@@ -47,7 +65,7 @@ const navigator = createStackNavigator({
     }
 },
 {
-initialRouteName:"Register"
+initialRouteName:"Delegate"
 })
 
 export default createAppContainer(navigator)
